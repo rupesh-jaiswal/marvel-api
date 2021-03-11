@@ -43,7 +43,6 @@ describe('Character controller', () => {
         await getAllCharactersId(req, res, next);
 
         expect(res.finished).toBe(false);
-
         expect(next).toBeCalledTimes(1);
     });
 
@@ -96,7 +95,6 @@ describe('Character controller', () => {
         await getCharacterById(req, res, next);
 
         expect(res.finished).toBe(false);
-
         expect(next).toBeCalledTimes(1);
     });
 });

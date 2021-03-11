@@ -1,6 +1,5 @@
 const { getAllCharactersId, getCharacterById } = require('./characters-service');
 const { characterMock } = require('../util/mock-api');
-const { NotFoundError } = require('../error-handler');
 
 describe('Character service', () => {
     beforeEach(() => {
@@ -29,20 +28,6 @@ describe('Character service', () => {
             const response = await getAllCharactersId();
             expect(response).toEqual(charactersMockResponse);
         });
-
-        // test('should throw api error when marvel api fails', async() => {
-        //     characterMock.getAllCharactersId({
-        //         response: {
-        //             response: {
-        //                 status: 404,
-        //             }
-        //         },
-        //         status: 404,
-        //     });
-        //     await expect(getAllCharactersId()).rejects.toThrow(
-        //         NotFoundError
-        //     );
-        // });
     });
 
     describe('getCharacterById', () => {
